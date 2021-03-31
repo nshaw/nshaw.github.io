@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Tutorial: using custom event for widget communication | Entando Developers</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/theme/favicon.png">
+    <script src="/theme/javascript/hotjar.js"></script>
+    <script src="https://www.googletagmanager.com/gtag/js?id=UA-17222082-5"></script>
+    <script src="/theme/javascript/ga.js"></script>
+    <meta name="description" content="Entando Developers">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="preload" href="/assets/css/0.styles.ee333861.css" as="style"><link rel="preload" href="/assets/js/app.f9723fdf.js" as="script"><link rel="preload" href="/assets/js/104.93a1a4b1.js" as="script"><link rel="preload" href="/assets/js/2.38978605.js" as="script"><link rel="preload" href="/assets/js/207.2d4c6cd4.js" as="script"><link rel="preload" href="/assets/js/103.c72030b4.js" as="script"><link rel="prefetch" href="/assets/js/10.119b1f4b.js"><link rel="prefetch" href="/assets/js/100.e8d4e336.js"><link rel="prefetch" href="/assets/js/101.e9c27fa2.js"><link rel="prefetch" href="/assets/js/102.1ffe25b6.js"><link rel="prefetch" href="/assets/js/105.bdb268bf.js"><link rel="prefetch" href="/assets/js/106.06e1779e.js"><link rel="prefetch" href="/assets/js/107.3bc80a57.js"><link rel="prefetch" href="/assets/js/108.f73779c3.js"><link rel="prefetch" href="/assets/js/109.fc3bbb7f.js"><link rel="prefetch" href="/assets/js/11.08931ffd.js"><link rel="prefetch" href="/assets/js/110.b8440cc5.js"><link rel="prefetch" href="/assets/js/111.f484f6a5.js"><link rel="prefetch" href="/assets/js/112.e775a181.js"><link rel="prefetch" href="/assets/js/113.356692d3.js"><link rel="prefetch" href="/assets/js/114.2d86aca4.js"><link rel="prefetch" href="/assets/js/115.6e254db4.js"><link rel="prefetch" href="/assets/js/116.ba7b92fc.js"><link rel="prefetch" href="/assets/js/117.f154a692.js"><link rel="prefetch" href="/assets/js/118.7812eea9.js"><link rel="prefetch" href="/assets/js/119.8b0f4381.js"><link rel="prefetch" href="/assets/js/12.be25d96b.js"><link rel="prefetch" href="/assets/js/120.6d16c2ed.js"><link rel="prefetch" href="/assets/js/121.f08ebee1.js"><link rel="prefetch" href="/assets/js/122.256a63ad.js"><link rel="prefetch" href="/assets/js/123.3b6f3694.js"><link rel="prefetch" href="/assets/js/124.7c1b9682.js"><link rel="prefetch" href="/assets/js/125.d7758059.js"><link rel="prefetch" href="/assets/js/126.5c96dc51.js"><link rel="prefetch" href="/assets/js/127.0974baed.js"><link rel="prefetch" href="/assets/js/128.71a3ccac.js"><link rel="prefetch" href="/assets/js/129.72e322bf.js"><link rel="prefetch" href="/assets/js/13.94901b62.js"><link rel="prefetch" href="/assets/js/130.eade42ba.js"><link rel="prefetch" href="/assets/js/131.f54822ba.js"><link rel="prefetch" href="/assets/js/132.e1e00309.js"><link rel="prefetch" href="/assets/js/133.54a7557d.js"><link rel="prefetch" href="/assets/js/134.56502dae.js"><link rel="prefetch" href="/assets/js/135.2b2872c9.js"><link rel="prefetch" href="/assets/js/136.0b42c656.js"><link rel="prefetch" href="/assets/js/137.70bdc571.js"><link rel="prefetch" href="/assets/js/138.8616a7ee.js"><link rel="prefetch" href="/assets/js/139.5b380973.js"><link rel="prefetch" href="/assets/js/14.4863866d.js"><link rel="prefetch" href="/assets/js/140.47176c70.js"><link rel="prefetch" href="/assets/js/141.b6d746ad.js"><link rel="prefetch" href="/assets/js/142.9ae3808a.js"><link rel="prefetch" href="/assets/js/143.2d4d7842.js"><link rel="prefetch" href="/assets/js/144.97e1caf4.js"><link rel="prefetch" href="/assets/js/145.f8899dd8.js"><link rel="prefetch" href="/assets/js/146.0b9f99a2.js"><link rel="prefetch" href="/assets/js/147.5ebc46d1.js"><link rel="prefetch" href="/assets/js/148.c5328cc0.js"><link rel="prefetch" href="/assets/js/149.9ff85137.js"><link rel="prefetch" href="/assets/js/15.36dbfd78.js"><link rel="prefetch" href="/assets/js/150.292118dd.js"><link rel="prefetch" href="/assets/js/151.5286858b.js"><link rel="prefetch" href="/assets/js/152.b1850e6f.js"><link rel="prefetch" href="/assets/js/153.287da884.js"><link rel="prefetch" href="/assets/js/154.d3891838.js"><link rel="prefetch" href="/assets/js/155.46c387b0.js"><link rel="prefetch" href="/assets/js/156.d8cd63ba.js"><link rel="prefetch" href="/assets/js/157.22c74d81.js"><link rel="prefetch" href="/assets/js/158.1fb1af69.js"><link rel="prefetch" href="/assets/js/159.b74ed25d.js"><link rel="prefetch" href="/assets/js/16.a8cd8771.js"><link rel="prefetch" href="/assets/js/160.a2e4a2ac.js"><link rel="prefetch" href="/assets/js/161.dbfdd568.js"><link rel="prefetch" href="/assets/js/162.03a51db4.js"><link rel="prefetch" href="/assets/js/163.7d87489f.js"><link rel="prefetch" href="/assets/js/164.5f3b80ff.js"><link rel="prefetch" href="/assets/js/165.63ba7226.js"><link rel="prefetch" href="/assets/js/166.02269479.js"><link rel="prefetch" href="/assets/js/167.148b2fe4.js"><link rel="prefetch" href="/assets/js/168.90eb447e.js"><link rel="prefetch" href="/assets/js/169.512bf357.js"><link rel="prefetch" href="/assets/js/17.db680630.js"><link rel="prefetch" href="/assets/js/170.775337d5.js"><link rel="prefetch" href="/assets/js/171.1c449f8f.js"><link rel="prefetch" href="/assets/js/172.c50acd37.js"><link rel="prefetch" href="/assets/js/173.62f37f8d.js"><link rel="prefetch" href="/assets/js/174.b04861b6.js"><link rel="prefetch" href="/assets/js/175.dd8e5aa8.js"><link rel="prefetch" href="/assets/js/176.7241f840.js"><link rel="prefetch" href="/assets/js/177.82345a8a.js"><link rel="prefetch" href="/assets/js/178.7828141e.js"><link rel="prefetch" href="/assets/js/179.32b62df9.js"><link rel="prefetch" href="/assets/js/18.df8a2361.js"><link rel="prefetch" href="/assets/js/180.026a4f61.js"><link rel="prefetch" href="/assets/js/181.cc77508c.js"><link rel="prefetch" href="/assets/js/182.41303df8.js"><link rel="prefetch" href="/assets/js/183.53436e0c.js"><link rel="prefetch" href="/assets/js/184.74bb16e0.js"><link rel="prefetch" href="/assets/js/185.7ef50ba6.js"><link rel="prefetch" href="/assets/js/186.9adc14a4.js"><link rel="prefetch" href="/assets/js/187.2793d0c1.js"><link rel="prefetch" href="/assets/js/188.eb1c8995.js"><link rel="prefetch" href="/assets/js/189.03a90c6f.js"><link rel="prefetch" href="/assets/js/19.44af761e.js"><link rel="prefetch" href="/assets/js/190.fc99ca73.js"><link rel="prefetch" href="/assets/js/191.45d394c6.js"><link rel="prefetch" href="/assets/js/192.236c62cc.js"><link rel="prefetch" href="/assets/js/193.e7a49abb.js"><link rel="prefetch" href="/assets/js/194.1ac2293b.js"><link rel="prefetch" href="/assets/js/195.733288cd.js"><link rel="prefetch" href="/assets/js/196.707845d5.js"><link rel="prefetch" href="/assets/js/197.a68f20bb.js"><link rel="prefetch" href="/assets/js/198.eec38c47.js"><link rel="prefetch" href="/assets/js/199.9489b6a6.js"><link rel="prefetch" href="/assets/js/20.d95fd6b8.js"><link rel="prefetch" href="/assets/js/200.0e223484.js"><link rel="prefetch" href="/assets/js/201.a46e9c41.js"><link rel="prefetch" href="/assets/js/202.a4798e29.js"><link rel="prefetch" href="/assets/js/203.fde78c75.js"><link rel="prefetch" href="/assets/js/204.a5a4b251.js"><link rel="prefetch" href="/assets/js/205.e95bb0f9.js"><link rel="prefetch" href="/assets/js/206.a11bee54.js"><link rel="prefetch" href="/assets/js/208.bd623759.js"><link rel="prefetch" href="/assets/js/209.5fb28e42.js"><link rel="prefetch" href="/assets/js/21.0bbd3627.js"><link rel="prefetch" href="/assets/js/210.a662a59e.js"><link rel="prefetch" href="/assets/js/211.c2f7def7.js"><link rel="prefetch" href="/assets/js/212.4df4e8aa.js"><link rel="prefetch" href="/assets/js/213.156ef48a.js"><link rel="prefetch" href="/assets/js/214.29c12690.js"><link rel="prefetch" href="/assets/js/215.d36f28a9.js"><link rel="prefetch" href="/assets/js/216.36ebeb01.js"><link rel="prefetch" href="/assets/js/217.98dd5b23.js"><link rel="prefetch" href="/assets/js/218.e6b53486.js"><link rel="prefetch" href="/assets/js/219.2b5d9861.js"><link rel="prefetch" href="/assets/js/22.661cc888.js"><link rel="prefetch" href="/assets/js/220.08a4258a.js"><link rel="prefetch" href="/assets/js/221.deaa6780.js"><link rel="prefetch" href="/assets/js/222.5ab5b81e.js"><link rel="prefetch" href="/assets/js/223.dc82a701.js"><link rel="prefetch" href="/assets/js/224.6b73f403.js"><link rel="prefetch" href="/assets/js/225.71deb8d2.js"><link rel="prefetch" href="/assets/js/226.b0583960.js"><link rel="prefetch" href="/assets/js/227.38d56a96.js"><link rel="prefetch" href="/assets/js/228.0d51f65f.js"><link rel="prefetch" href="/assets/js/229.5413bff4.js"><link rel="prefetch" href="/assets/js/23.768ae010.js"><link rel="prefetch" href="/assets/js/230.b4c43922.js"><link rel="prefetch" href="/assets/js/231.88864909.js"><link rel="prefetch" href="/assets/js/232.ba7eb83f.js"><link rel="prefetch" href="/assets/js/233.dff383ba.js"><link rel="prefetch" href="/assets/js/234.3a2a3dca.js"><link rel="prefetch" href="/assets/js/235.3c728dde.js"><link rel="prefetch" href="/assets/js/236.5db55ab5.js"><link rel="prefetch" href="/assets/js/237.b85bb165.js"><link rel="prefetch" href="/assets/js/238.95450ca1.js"><link rel="prefetch" href="/assets/js/239.69197478.js"><link rel="prefetch" href="/assets/js/24.5c322018.js"><link rel="prefetch" href="/assets/js/240.43c295d1.js"><link rel="prefetch" href="/assets/js/241.fd226820.js"><link rel="prefetch" href="/assets/js/242.de211b5f.js"><link rel="prefetch" href="/assets/js/243.02670498.js"><link rel="prefetch" href="/assets/js/244.682f76ab.js"><link rel="prefetch" href="/assets/js/245.383ef916.js"><link rel="prefetch" href="/assets/js/246.4ba7d33d.js"><link rel="prefetch" href="/assets/js/247.d8a08434.js"><link rel="prefetch" href="/assets/js/248.f5d88088.js"><link rel="prefetch" href="/assets/js/249.8beb0c35.js"><link rel="prefetch" href="/assets/js/25.e78aaf2c.js"><link rel="prefetch" href="/assets/js/250.8f9049fb.js"><link rel="prefetch" href="/assets/js/251.853db1ad.js"><link rel="prefetch" href="/assets/js/252.f8b5e2d4.js"><link rel="prefetch" href="/assets/js/253.1d9dff79.js"><link rel="prefetch" href="/assets/js/254.4683f2de.js"><link rel="prefetch" href="/assets/js/255.1bb8cb53.js"><link rel="prefetch" href="/assets/js/256.5e05d39f.js"><link rel="prefetch" href="/assets/js/257.94ceda6a.js"><link rel="prefetch" href="/assets/js/258.ce140be8.js"><link rel="prefetch" href="/assets/js/259.384374aa.js"><link rel="prefetch" href="/assets/js/26.8967eba7.js"><link rel="prefetch" href="/assets/js/260.f1661161.js"><link rel="prefetch" href="/assets/js/261.6ba8b345.js"><link rel="prefetch" href="/assets/js/262.8bd734e5.js"><link rel="prefetch" href="/assets/js/263.47dc61d1.js"><link rel="prefetch" href="/assets/js/264.d11bf10c.js"><link rel="prefetch" href="/assets/js/265.686a7252.js"><link rel="prefetch" href="/assets/js/266.3f324ad6.js"><link rel="prefetch" href="/assets/js/267.375feb86.js"><link rel="prefetch" href="/assets/js/268.99ada12b.js"><link rel="prefetch" href="/assets/js/269.29eef946.js"><link rel="prefetch" href="/assets/js/27.2e91e454.js"><link rel="prefetch" href="/assets/js/270.15117bdc.js"><link rel="prefetch" href="/assets/js/271.05e456ec.js"><link rel="prefetch" href="/assets/js/272.728c858e.js"><link rel="prefetch" href="/assets/js/273.e8db203e.js"><link rel="prefetch" href="/assets/js/274.b8301fbc.js"><link rel="prefetch" href="/assets/js/275.c8751916.js"><link rel="prefetch" href="/assets/js/276.518d1856.js"><link rel="prefetch" href="/assets/js/277.a63830d7.js"><link rel="prefetch" href="/assets/js/278.52bdd8a3.js"><link rel="prefetch" href="/assets/js/279.fc47e48d.js"><link rel="prefetch" href="/assets/js/28.66988fc2.js"><link rel="prefetch" href="/assets/js/280.08013a51.js"><link rel="prefetch" href="/assets/js/281.01ec0203.js"><link rel="prefetch" href="/assets/js/282.e8fa9390.js"><link rel="prefetch" href="/assets/js/283.d44a8673.js"><link rel="prefetch" href="/assets/js/284.c3402ccd.js"><link rel="prefetch" href="/assets/js/285.2426c552.js"><link rel="prefetch" href="/assets/js/286.5e777da7.js"><link rel="prefetch" href="/assets/js/287.e201471a.js"><link rel="prefetch" href="/assets/js/288.1557a53b.js"><link rel="prefetch" href="/assets/js/289.27451056.js"><link rel="prefetch" href="/assets/js/29.5be59056.js"><link rel="prefetch" href="/assets/js/290.24c042b0.js"><link rel="prefetch" href="/assets/js/291.4c6a3e1b.js"><link rel="prefetch" href="/assets/js/292.7a01e945.js"><link rel="prefetch" href="/assets/js/293.b2962a47.js"><link rel="prefetch" href="/assets/js/294.b166b7fb.js"><link rel="prefetch" href="/assets/js/295.22bfcc74.js"><link rel="prefetch" href="/assets/js/296.40129dbc.js"><link rel="prefetch" href="/assets/js/297.b0667d2f.js"><link rel="prefetch" href="/assets/js/298.68546df9.js"><link rel="prefetch" href="/assets/js/299.7eb255a0.js"><link rel="prefetch" href="/assets/js/3.be0b7538.js"><link rel="prefetch" href="/assets/js/30.0d35a09c.js"><link rel="prefetch" href="/assets/js/300.f5b1850c.js"><link rel="prefetch" href="/assets/js/301.abd69dad.js"><link rel="prefetch" href="/assets/js/302.fcd2ff0e.js"><link rel="prefetch" href="/assets/js/303.e8586100.js"><link rel="prefetch" href="/assets/js/304.22f0cccc.js"><link rel="prefetch" href="/assets/js/305.cd484942.js"><link rel="prefetch" href="/assets/js/306.07164c2b.js"><link rel="prefetch" href="/assets/js/307.9e80a3e7.js"><link rel="prefetch" href="/assets/js/308.b07ab00b.js"><link rel="prefetch" href="/assets/js/309.49151fb3.js"><link rel="prefetch" href="/assets/js/31.1649a7c7.js"><link rel="prefetch" href="/assets/js/310.c7311e38.js"><link rel="prefetch" href="/assets/js/311.498f717c.js"><link rel="prefetch" href="/assets/js/32.4ef96f2f.js"><link rel="prefetch" href="/assets/js/33.dfe5d539.js"><link rel="prefetch" href="/assets/js/34.f7944168.js"><link rel="prefetch" href="/assets/js/35.708ce721.js"><link rel="prefetch" href="/assets/js/36.450026c5.js"><link rel="prefetch" href="/assets/js/37.bd3789bb.js"><link rel="prefetch" href="/assets/js/38.858976ab.js"><link rel="prefetch" href="/assets/js/39.34447a6c.js"><link rel="prefetch" href="/assets/js/4.0cf06f20.js"><link rel="prefetch" href="/assets/js/40.19551fd5.js"><link rel="prefetch" href="/assets/js/41.554225bc.js"><link rel="prefetch" href="/assets/js/42.40653b08.js"><link rel="prefetch" href="/assets/js/43.3a267247.js"><link rel="prefetch" href="/assets/js/44.61a311e7.js"><link rel="prefetch" href="/assets/js/45.827409cc.js"><link rel="prefetch" href="/assets/js/46.644be606.js"><link rel="prefetch" href="/assets/js/47.e68a4587.js"><link rel="prefetch" href="/assets/js/48.07c94fd7.js"><link rel="prefetch" href="/assets/js/49.b8de48cf.js"><link rel="prefetch" href="/assets/js/5.de18e69d.js"><link rel="prefetch" href="/assets/js/50.88b9e7a3.js"><link rel="prefetch" href="/assets/js/51.adc859c4.js"><link rel="prefetch" href="/assets/js/52.ab1f4634.js"><link rel="prefetch" href="/assets/js/53.6106a359.js"><link rel="prefetch" href="/assets/js/54.f9df9edc.js"><link rel="prefetch" href="/assets/js/55.613b19ad.js"><link rel="prefetch" href="/assets/js/56.4533ae8d.js"><link rel="prefetch" href="/assets/js/57.a71847c8.js"><link rel="prefetch" href="/assets/js/58.6c80a6fb.js"><link rel="prefetch" href="/assets/js/59.ceeb713d.js"><link rel="prefetch" href="/assets/js/6.2fc1e05a.js"><link rel="prefetch" href="/assets/js/60.fc031e97.js"><link rel="prefetch" href="/assets/js/61.b32d576c.js"><link rel="prefetch" href="/assets/js/62.407e211f.js"><link rel="prefetch" href="/assets/js/63.c2fe8259.js"><link rel="prefetch" href="/assets/js/64.6befa6fb.js"><link rel="prefetch" href="/assets/js/65.02ffeadf.js"><link rel="prefetch" href="/assets/js/66.dc8eeca5.js"><link rel="prefetch" href="/assets/js/67.68915b03.js"><link rel="prefetch" href="/assets/js/68.912ba774.js"><link rel="prefetch" href="/assets/js/69.160a8cfd.js"><link rel="prefetch" href="/assets/js/7.9bddb3b9.js"><link rel="prefetch" href="/assets/js/70.ec5140fd.js"><link rel="prefetch" href="/assets/js/71.bfe1042c.js"><link rel="prefetch" href="/assets/js/72.70c430ef.js"><link rel="prefetch" href="/assets/js/73.16bf5eeb.js"><link rel="prefetch" href="/assets/js/74.43c81607.js"><link rel="prefetch" href="/assets/js/75.067dea99.js"><link rel="prefetch" href="/assets/js/76.028e1c30.js"><link rel="prefetch" href="/assets/js/77.aa04dbd8.js"><link rel="prefetch" href="/assets/js/78.1be08032.js"><link rel="prefetch" href="/assets/js/79.25d395a7.js"><link rel="prefetch" href="/assets/js/8.96fe4ca7.js"><link rel="prefetch" href="/assets/js/80.0e23deee.js"><link rel="prefetch" href="/assets/js/81.ae16af8c.js"><link rel="prefetch" href="/assets/js/82.ca6a8b57.js"><link rel="prefetch" href="/assets/js/83.723a8e4b.js"><link rel="prefetch" href="/assets/js/84.fd12fd4c.js"><link rel="prefetch" href="/assets/js/85.c7866821.js"><link rel="prefetch" href="/assets/js/86.652aded0.js"><link rel="prefetch" href="/assets/js/87.1bdfa1e2.js"><link rel="prefetch" href="/assets/js/88.ca9b7901.js"><link rel="prefetch" href="/assets/js/89.cf3f4bd4.js"><link rel="prefetch" href="/assets/js/9.9e9c4037.js"><link rel="prefetch" href="/assets/js/90.d3ef14bc.js"><link rel="prefetch" href="/assets/js/91.89ea6446.js"><link rel="prefetch" href="/assets/js/92.991dab55.js"><link rel="prefetch" href="/assets/js/93.bb4ba365.js"><link rel="prefetch" href="/assets/js/94.097051c7.js"><link rel="prefetch" href="/assets/js/95.7755f963.js"><link rel="prefetch" href="/assets/js/96.60968818.js"><link rel="prefetch" href="/assets/js/97.f8403eea.js"><link rel="prefetch" href="/assets/js/98.6160ec10.js"><link rel="prefetch" href="/assets/js/99.166daa22.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ee333861.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/theme/logo.svg" alt="Entando Developers" class="logo"> <span class="site-name can-hide">Entando Developers</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="javascript:Entando.versionedLink(&quot;/docs&quot;);" target="_self" class="nav-link external">
+  Docs
+  <!----></a></div><div class="nav-item"><a href="javascript:Entando.versionedLink(&quot;/tutorials&quot;);" target="_self" class="nav-link external">
+  Tutorials
+  <!----></a></div><div class="nav-item"><a href="https://forum.entando.org" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Forum
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://www.entando.com/page/en/blog" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Blog
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://www.entando.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Entando.com
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <a href="https://github.com/entando/entando-docs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="javascript:Entando.versionedLink(&quot;/docs&quot;);" target="_self" class="nav-link external">
+  Docs
+  <!----></a></div><div class="nav-item"><a href="javascript:Entando.versionedLink(&quot;/tutorials&quot;);" target="_self" class="nav-link external">
+  Tutorials
+  <!----></a></div><div class="nav-item"><a href="https://forum.entando.org" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Forum
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://www.entando.com/page/en/blog" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Blog
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://www.entando.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Entando.com
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <a href="https://github.com/entando/entando-docs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><a href="/v6.1/tutorials/micro-frontends" class="sidebar-heading clickable router-link-active open"><span>Micro Frontends</span> <span class="arrow down"></span></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/v6.1/tutorials/micro-frontends/react.html" class="sidebar-link">React</a></li><li><a href="/v6.1/tutorials/micro-frontends/angular.html" class="sidebar-link">Angular</a></li><li><a href="/v6.1/tutorials/micro-frontends/communication.html" class="sidebar-link">Communication</a></li><li><a href="/v6.1/tutorials/micro-frontends/widget-configuration/" class="sidebar-link">Config</a></li><li><a href="/v6.1/tutorials/micro-frontends/generate-micro-frontends-from-a-database-entity/" class="sidebar-link">Blueprint</a></li><li><a href="/v6.1/tutorials/micro-frontends/authentication/" class="sidebar-link">Authentication</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Microservice Applications</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Content Management</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Component Repository</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Extend the Platform</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Configuration and Operations</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="tutorial-using-custom-event-for-widget-communication"><a href="#tutorial-using-custom-event-for-widget-communication" class="header-anchor">#</a> Tutorial: using custom event for widget communication</h1> <p>Entando 6 widgets can communicate through <a href="https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent" target="_blank" rel="noopener noreferrer">Custom
+Events<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>,
+an established web standard.</p> <p>In this tutorial we’re going to build two widgets: the angular one will
+fire an event, the react one will intercept it.</p> <h2 id="fire-an-event-from-a-widget"><a href="#fire-an-event-from-a-widget" class="header-anchor">#</a> Fire an event from a widget</h2> <p><code>ng new pub-widget-ng</code></p> <p>then follow the same steps or our <a href="./create-angular-microfrontend-widget">previous
+tutorial</a></p> <p>This time we need to add some form and custom event firing logic</p> <h3 id="app-module-ts"><a href="#app-module-ts" class="header-anchor">#</a> app.module.ts</h3> <div class="language- extra-class"><pre><code>import { BrowserModule } from '@angular/platform-browser';
+import { NgModule, Injector } from '@angular/core';
+import { createCustomElement } from '@angular/elements';
+import { AppComponent } from './app.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    ReactiveFormsModule
+  ],
+  providers: [],
+  entryComponents: [AppComponent]
+})
+export class AppModule {
+  constructor(private injector: Injector) {}
+
+  ngDoBootstrap() {
+    const el = createCustomElement(AppComponent, { injector: this.injector });
+    customElements.define('pub-widget-ng', el);
+  }
+}
+</code></pre></div><h3 id="app-component-js"><a href="#app-component-js" class="header-anchor">#</a> app.component.js</h3> <div class="language- extra-class"><pre><code>import { Component } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+
+const EVENTS = {
+  greeting: 'greeting',
+};
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  greetingForm = new FormGroup({
+    name: new FormControl(''),
+  });
+
+  publishWidgetEvent(eventId, detail) {
+    const widgetEvent = new CustomEvent(eventId, { detail });
+    window.dispatchEvent(widgetEvent);
+  }
+
+  onSubmit() {
+    const name = this.greetingForm.get('name').value;
+    this.publishWidgetEvent(EVENTS.greeting, { name });
+  }
+}
+</code></pre></div><blockquote><p><strong>Note</strong></p> <p>in the <code>CustomEvent</code> constructor, <code>detail</code> is the exact name to use in
+the event payload, as for the
+<a href="https://dom.spec.whatwg.org/#interface-customevent" target="_blank" rel="noopener noreferrer">specs<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>.</p></blockquote> <h3 id="app-template-html"><a href="#app-template-html" class="header-anchor">#</a> app.template.html</h3> <div class="language- extra-class"><pre><code>&lt;h1&gt;Send a greeting&lt;/h1&gt;
+&lt;form [formGroup]=&quot;greetingForm&quot; (ngSubmit)=&quot;onSubmit()&quot;&gt;
+  &lt;label&gt;
+    Name
+    &lt;input type=&quot;text&quot; formControlName=&quot;name&quot;&gt;
+  &lt;/label&gt;
+  &lt;button type=&quot;submit&quot;&gt;Say hello!&lt;/button&gt;
+&lt;/form&gt;
+</code></pre></div><p>To quickly test the event publishing we can execute from the JS console
+this line of code</p> <div class="language- extra-class"><pre><code>window.addEventListener('greeting', (evt) =&gt; console.log('Hello', evt.detail.name))
+</code></pre></div><p>Then write something in the text field, click the &quot;Say hello!&quot; button
+and have a look ath the JS console: it will show the expected hello
+message.</p> <h2 id="consume-an-event-in-another-widget"><a href="#consume-an-event-in-another-widget" class="header-anchor">#</a> Consume an event in another widget</h2> <p>Now, let’s create the react subscriber widget.</p> <p><code>npx create-react-app sub-widget-react --use-npm</code></p> <p>then follow the same steps or our <a href="./create-react-microfrontend-widget">previous
+tutorial</a>.</p> <p>Be careful to</p> <ul><li><p>rename <code>WidgetElement.js</code> to <code>SubscriberWidgetElement.js</code></p></li> <li><p>edit <code>index.js</code>: now you should import <code>SubscriberWidgetElement</code></p></li> <li><p>edit <code>index.html</code> updating the reference to the custom element: now
+it’s <code>&lt;sub-widget-react&gt;</code></p></li> <li><p>edit <code>SubscriberWidgetElement.js</code> and <code>App.js</code></p></li></ul> <h3 id="subscriberwidgetelement-js"><a href="#subscriberwidgetelement-js" class="header-anchor">#</a> SubscriberWidgetElement.js</h3> <p>(we’re renaming <code>WidgetElement</code> to <code>SubscriberWidgetElement</code> and update
+the import in <code>index.js</code> accordingly)</p> <div class="language- extra-class"><pre><code>import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+
+const EVENTS = {
+  greeting: 'greeting',
+};
+
+class SubscriberWidgetElement extends HTMLElement {
+
+  constructor() {
+    super();
+    this.name = null;
+    this.subscribeToWidgetEvent(EVENTS.greeting, (evt) =&gt; this.onGreeting(evt.detail.name));
+  }
+
+  connectedCallback() {
+    this.mountPoint = document.createElement('div');
+    this.appendChild(this.mountPoint);
+    this.render();
+  }
+
+  subscribeToWidgetEvent(eventType, eventHandler) {
+    window.addEventListener(eventType, eventHandler);
+  }
+
+  onGreeting(name) {
+    this.name = name;
+    this.render();
+  }
+
+  render() {
+    ReactDOM.render(&lt;App name={this.name} /&gt;, this.mountPoint);
+  }
+}
+
+customElements.define('sub-widget-react', SubscriberWidgetElement);
+
+export default SubscriberWidgetElement;
+</code></pre></div><h3 id="app-js"><a href="#app-js" class="header-anchor">#</a> App.js</h3> <div class="language- extra-class"><pre><code>import React from 'react';
+import './App.css';
+
+function App({ name }) {
+  return name ? (&lt;h2&gt;Just got a greeting from {name}&lt;/h2&gt;)
+    : (&lt;h2&gt;Waiting for a greeting...&lt;/h2&gt;);
+}
+
+export default App;
+</code></pre></div><p>To quickly test the event publishing we can execute from the JS console
+these lines of code</p> <div class="language- extra-class"><pre><code>const widgetEvent = new CustomEvent('greeting', {
+  detail: {
+    name: 'Pippo'
+  },
+});
+window.dispatchEvent(widgetEvent);
+</code></pre></div><p>And then the widget will update the text.</p> <h2 id="make-both-widgets-work-in-entando"><a href="#make-both-widgets-work-in-entando" class="header-anchor">#</a> Make both widgets work in Entando</h2> <p>To properly test widgets in an entando instance, follow those steps (you
+can use the <a href="./create-react-microfrontend-widget">basic microfrontend
+tutorial</a> as reference)</p> <ul><li><p>build both widgets</p></li> <li><p>copy widget files</p></li> <li><p>create widgets from App Builder</p></li> <li><p>create a page model from App Builder</p></li> <li><p>create a page and assign the just created page model</p></li> <li><p>configure the page dragging both widget</p></li></ul> <p>If you need a simple page model, you can use this one</p> <p><strong>JSON Configuration</strong></p> <div class="language- extra-class"><pre><code>{
+  &quot;frames&quot;: [
+    {
+      &quot;pos&quot;: 0,
+      &quot;descr&quot;: &quot;Sample Frame&quot;,
+      &quot;mainFrame&quot;: false,
+      &quot;defaultWidget&quot;: null,
+      &quot;sketch&quot;: null
+    },
+    {
+      &quot;pos&quot;: 1,
+      &quot;descr&quot;: &quot;Sample Frame Two&quot;,
+      &quot;mainFrame&quot;: false,
+      &quot;defaultWidget&quot;: null,
+      &quot;sketch&quot;: null
+    }
+  ]
+}
+</code></pre></div><p><strong>Template</strong></p> <div class="language- extra-class"><pre><code>&lt;#assign wp=JspTaglibs[&quot;/aps-core&quot;]&gt;
+&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0 Transitional//EN&quot;&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;&lt;@wp.currentPage param=&quot;title&quot; /&gt;&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;&lt;@wp.currentPage param=&quot;title&quot; /&gt;&lt;/h1&gt;
+&lt;div&gt;&lt;@wp.show frame=0 /&gt;&lt;/div&gt;
+&lt;div&gt;&lt;@wp.show frame=1 /&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div><p>Now, go to the page you just created and you will find both widgets.
+Write something in the publisher widget input, press the button and the
+subscriber widget will update. Done!</p></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/entando/entando-docs/edit/master/vuepress/docs/v6.1/tutorials/micro-frontends/micro-frontends/mixed-widget-communication.md" target="_blank" rel="noopener noreferrer">Edit this page on GitHub</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">6/26/2020, 10:59:44 AM</span></div></footer> <!----> </main></div> <div><script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="16a1fc12-1dc3-4d29-be0d-a10476fbdedc" type="text/javascript" async="async"></script> <script type="text/javascript" id="hs-script-loader" async="async" defer="defer" src="//js.hs-scripts.com/2788117.js"></script></div></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.f9723fdf.js" defer></script><script src="/assets/js/104.93a1a4b1.js" defer></script><script src="/assets/js/2.38978605.js" defer></script><script src="/assets/js/207.2d4c6cd4.js" defer></script><script src="/assets/js/103.c72030b4.js" defer></script>
+  </body>
+</html>

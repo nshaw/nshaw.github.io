@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[101],{1004:function(t,e,n){"use strict";n.r(e);var r=n(31),s=Object(r.a)({},(function(){var t=this.$createElement;return(this._self._c||t)("SpecialLayout",{attrs:{jhipster:"true"}})}),[],!1,null,null,null);e.default=s.exports}}]);
